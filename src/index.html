@@ -1,0 +1,224 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/logo.png" type="image/x-icon">
+    <meta property="og:title" content="Just Short Lnk">
+<meta property="og:description" content="Url Shortener For Links">
+<meta property="og:image" content="https://justlnk.tk/secure.png">
+<meta property="og:url" content="https://justlnk.tk">
+<meta name="twitter:title" content="Just Short Lnk">
+<meta name="twitter:description" content="Url Shortener For Links">
+<meta name="twitter:image" content="http://justlnk.tk/secure.png">
+<meta name="twitter:card" content="summary_small_image">
+<meta name="twitter:image:alt" content="secure image logo basically a lock">
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="JustLnk" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<script src="https://use.fontawesome.com/839e0b2948.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sail&display=swap" rel="stylesheet">
+<title>JustShortLnk | Url Shortener For Links</title>
+<style>body{font-family: 'Sail', cursive;font-size:60px;}</style>
+</head>
+<body onload="load()">
+    <a href=//justlnk.tk><div class="navbar"><h1><h1 class="text-danger">JustShortLnk</h1></h1></div></a>
+    <hr>
+    
+    <div class="container">
+        <div id='alloted' hidden style="font-family: 'Courier New', Courier, monospace;font-size: small;" class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Oh Mo!</strong> That alias seems to be alloted already.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        <div class="container">
+        <form action="#submit" class="row" onsubmit=submit() id='form'>
+           <label for="linkput" class="form col-12">Enter your link</label>
+        <input style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" type="url" required name="linkput" id="1" class="form-control col-9" placeholder="mysite.com/long/long/very/long.link">
+        
+        <button type="submit" class="btn btn-danger col-sm" >Submit</button>
+        <div class="class col-sm d-inline-flex p-2" style="font-family: 'Courier New', Courier, monospace;">justlnk.tk/ 
+        <input class="form-control col-sm " style="top:25%;" type="text" name="alias" id="2" placeholder="mysitename"></div>
+        </form>
+        <div class="card" id='result' hidden style="background-position: 400px 300px;background-repeat: repeat-y;background-image: url(http://free.pagepeeker.com/v2/thumbs.php?size=l&url=example.com/example/);">
+            <!--img width="200px" height="150px" class="card-img-top" src="http://free.pagepeeker.com/v2/thumbs.php?size=l&url=example.com/example/" alt="some image crap"---->
+            <div class="card-body" width="100%" style="left: 0;right: 100%;position: relative;">
+              <h5 class="card-title" id='site-title'>Site title</h5>
+              <!-- Target -->
+                <input style="font-size: large;font-family: 'Courier New', Courier, monospace;font-size: large;" class="form-control disabled" id='copy' disabled value="https://justlnk.tk/mysitename">
+                <!-- Trigger -->
+                <button class="btn" data-clipboard-target="#copy">
+                    <img width="36px" src="https://clipboardjs.com/assets/images/clippy.svg" alt="Copy to clipboard">
+                </button>
+              <p class="card-text" style="font-family: 'Courier New', Courier, monospace;font-size: large;" id='link'>https://justlnk.tk/mysitename</p>
+              <a href="#" class="btn btn-success" >View Stats</a>
+            </div>
+          </div>
+    <div class="container card">What's your link about?
+       <br><div class="comp" style="font-size: 26px;">
+        Each link you post about on social media, news press or share it.
+        It all tells a story. The story of the power of captivating the viewer.
+        Merely this link can help you support and increase views,likes and numbers those you want.
+        So,don't ask us how to go viral , just follow your passion and share it with the world. 
+        And Leave the rest to us. We'll do the hardwork. You must taste the success. 
+    </div>
+    <div style="font-size: 32px;" class="text-secondary">by your friends at JustShortLnk</div>
+    </div>
+    <img src='/secure.png' width="30px" height="30px"/>
+    Do Anything.With Security.
+</div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+
+        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+      
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+      
+        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+      
+        <!-- Add Firebase products that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
+        
+        <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-database.js"></script>
+    <script>
+        var exists
+        var linkput
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAq2nFxEbKXjaSLoymYVegri8q0zBroZPk",
+  authDomain: "justlnk.firebaseapp.com",
+  databaseURL: "https://justlnk-default-rtdb.firebaseio.com",
+  projectId: "justlnk",
+  storageBucket: "justlnk.appspot.com",
+  messagingSenderId: "23533049660",
+  appId: "1:23533049660:web:e8afbeeb17463520713039",
+  measurementId: "G-RRXTV2R574"
+};
+var firebase = firebase.initializeApp(firebaseConfig)
+    var database = firebase.database();
+    database.ref('ref/links/mysite').once('value').then((snapshot) => {
+  var username = snapshot.val();
+  //console.log(username)
+  // ...
+});
+    const random = (length = 8) => {
+    // Declare all characters
+    let chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+    // Pick characers randomly
+    let str = '';
+    for (let i = 0; i < length; i++) {
+        str += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+
+    return str;
+
+};
+    function submit(){alert('submitted')}
+    function check(alias,linkput){
+        
+        firebase.database().ref('ref/links/'+alias).once('value').then((snapshot) => {
+  if (snapshot.exists()){
+  //console.log('exists')
+  exists= true
+}else{
+    exists= false;
+}
+//exists='true'
+  // ...
+  
+//console.log(exists)
+if(exists){
+        //alert('Copied')
+        //console.log(alias,linkput)
+        // alias alloted to same url
+        get(alias,linkput)
+        
+    }
+return exists;
+});   
+    }
+    function get(alias,linkput){
+        firebase.database().ref('ref/links/'+alias).once('value').then((snapshot) => {
+            if (snapshot.exists()){var data = snapshot.val();
+  //console.log(data.url)
+  if(data.url==linkput){
+        document.getElementById('result').style.backgroundImage='url(http://free.pagepeeker.com/v2/thumbs.php?size=l&url='+linkput.replace('https://','').replace('http://','')+')'
+        document.getElementById('copy').value='https://justlnk.tk/'+alias
+        document.getElementById('link').innerText='https://justlnk.tk/'+alias
+        document.getElementById('result').removeAttribute('hidden')
+        document.getElementById('form').hidden='true'
+        //console.log(linkput)
+        }//else reject request
+        else{
+            document.getElementById('alloted').removeAttribute('hidden')
+        }
+  return data.url;}
+  // ...
+});
+    }
+    function load(){
+        var url_string = window.location.href; // www.test.com?filename=test
+    var url = new URL(url_string);
+    var linkput = url.searchParams.get("linkput");
+    var alias= url.searchParams.get("alias");
+    //empty link allotted
+    if (linkput==''){
+
+    }//new user request
+    else if(linkput==null){
+
+    }
+    else{
+        //no alias wished
+    if(alias==''){
+        randomstring=random(6)
+        alias=randomstring
+        firebase.database().ref('ref/' + 'links/'+alias).set({
+    url: linkput,
+    views: 0,
+    locations : '',
+    refferers:''
+  });
+    document.getElementById('result').style.backgroundImage='url(http://free.pagepeeker.com/v2/thumbs.php?size=l&url='+url+')'
+    document.getElementById('copy').value='https://justlnk.tk/'+alias
+    document.getElementById('link').innerText='https://justlnk.tk/'+alias
+    document.getElementById('result').removeAttribute('hidden')
+    document.getElementById('form').hidden='true'
+    }//alias is already selected
+    else{check(alias,linkput);
+        setTimeout(function(){  
+        if(exists){
+            //console.log('alias')
+    }//alias is wished and alloted
+    else{
+        //console.log(exists)
+        firebase.database().ref('ref/' + 'links/'+alias).set({
+    url: linkput,
+    views: 0,
+    locations : '',
+    refferers:''
+        });
+        document.getElementById('result').style.backgroundImage='url(http://free.pagepeeker.com/v2/thumbs.php?size=l&url='+linkput.replace('https://','').replace('http://','')+')'
+        document.getElementById('copy').value='https://justlnk.tk/'+alias
+        document.getElementById('link').innerText='https://justlnk.tk/'+alias
+    document.getElementById('result').removeAttribute('hidden')
+    document.getElementById('form').hidden='true'
+    }
+},3000)
+}
+
+    //alert(linkput);
+    //alert(alias);
+}
+    }
+    </script>
+</body>
+</html>

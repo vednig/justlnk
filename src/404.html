@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Sail&display=swap" rel="stylesheet">
+<script src="https://use.fontawesome.com/839e0b2948.js"></script>
+<body>
+
+<h1  style="text-align: center;align-content: center;"><i class="fa fa-lock" aria-hidden="true" style="color: rgb(23, 190, 23);"></i> <br> We are Securely Redirecting You to the Site <br><a href="//justlink.tk"><p style="font-family: 'Sail', cursive;color: red;">Justlnk</p></a></h1>
+        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+      
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+      
+        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+      
+        <!-- Add Firebase products that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
+        
+        <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-database.js"></script>
+    <script>
+        //console.log(path.split('/'))
+        const firebaseConfig = {
+  apiKey: "AIzaSyAq2nFxEbKXjaSLoymYVegri8q0zBroZPk",
+  authDomain: "justlnk.firebaseapp.com",
+  databaseURL: "https://justlnk-default-rtdb.firebaseio.com",
+  projectId: "justlnk",
+  storageBucket: "justlnk.appspot.com",
+  messagingSenderId: "23533049660",
+  appId: "1:23533049660:web:e8afbeeb17463520713039",
+  measurementId: "G-RRXTV2R574"
+};
+var firebase = firebase.initializeApp(firebaseConfig)
+    var database = firebase.database();
+
+        function httpGet(theUrl)
+    {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+        xmlHttp.send( null );
+        return xmlHttp.responseText;
+    }
+    path=String(window.location.href)
+    alias=path.split('/')[3]
+        console.log(path,alias)
+    alias='mysite'
+    api_key='3f398ee8bbf888eaed7ab318a3bc51a16a40c016d48a1e41cd7abfd6'
+    data=httpGet('https://api.ipdata.co/?api-key='+api_key)
+    data=JSON.parse(data);
+    firebase.database().ref('ref/links/'+alias).once('value').then((snapshot) => {
+    if (snapshot.exists()){
+    database_snap=snapshot.val()
+    window.location.replace(database_snap.url);
+    view1=Number(database_snap.views)
+    const view=eval('view1 + 1')
+    console.log(view)
+    database.ref('ref/links/'+alias).set({
+            url:String(database_snap.url),
+            views: view,
+            location:database_snap.location+'/'+data.ip,
+            refferers:database_snap.refferers+'/'+document.referrer
+        })
+        var db = firebase.firestore();
+    
+//db.collection('ref').doc(alias).set({data:0,value:0,views:0,countries:0,timing:0});
+        if (database_snap.url.includes("https://")){
+            window.location.replace(database_snap.url)
+        }else{
+            if (confirm("The site you are being refferred to seems unsecure.Do you want to proceed?")) {
+                window.location.replace(database_snap.url);
+    } else {
+                window.location.replace('https://justlnk.tk');
+        }}
+        }
+
+    })
+
+    </script>
+</body>
+</html>
